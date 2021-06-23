@@ -23,7 +23,7 @@
 @endif
 
 <div class="w-4/5 m-auto pt-20">
-    <form action="/blog/{{ $post->slug }}" method="POST" enctype="multipart/form-data">
+    <form action="/invoice/{{ $post->slug }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

@@ -5,7 +5,8 @@
 @import "tailwindcss/utilities";
 
 .background-image {
-    background-image: url(images/web-development.jpg);
+    /* background-image: url('images/web-development.jpg'); */
+    background: red;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;

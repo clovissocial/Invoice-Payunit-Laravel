@@ -4,7 +4,7 @@
 <div class="w-4/5 m-auto text-center">
     <div class="py-15">
         <h1 class="text-6xl">
-            Create Post
+            Create An Invoice
         </h1>
     </div>
 </div>    
@@ -23,7 +23,7 @@
 @endif
 
 <div class="w-4/5 m-auto pt-20">
-    <form action="/blog" method="post" enctype="multipart/form-data">
+    <form action="/invoice" method="post" enctype="multipart/form-data">
         @csrf
         <input type="text" name="title" placeholder="Title..." class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none">
         <textarea name="description" placeholder="Description..." class="py-20 bg-transparent block border-b-2 w-full h-20 text-2xl outline-none"></textarea>
@@ -38,7 +38,7 @@
         </div>
 
         <button type="submit" class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-            Submit Post
+            Send Invoice
         </button>
 
     </form>

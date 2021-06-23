@@ -21,7 +21,7 @@ class PostsController extends Controller
     public function index()
     {
         
-        return view('blog.index')
+        return view('invoice.index')
             ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
     }
 
@@ -32,7 +32,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view ('blog.create');
+        return view ('invoice.create');
     }
 
     /**
@@ -62,7 +62,7 @@ class PostsController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-        return redirect('/blog')->with('message', 'Your post has been added!'); 
+        return redirect('/invoice')->with('message', 'Your post has been added!'); 
         
     }
 
@@ -74,7 +74,7 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-        return view('blog.show')->with('post', Post::where('slug', $slug)->first());
+        return view('invoice.show')->with('post', Post::where('slug', $slug)->first());
     }
 
     /**
@@ -85,7 +85,7 @@ class PostsController extends Controller
      */
     public function edit($slug)
     {
-        return view('blog.edit')
+        return view('invoice.edit')
         ->with('post', Post::where('slug', $slug)->first());
     }
 
@@ -110,7 +110,7 @@ class PostsController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-        return redirect('/blog')->with('message', 'Your post has been updated');
+        return redirect('/invoice')->with('message', 'Your post has been updated');
     }
 
     /**
@@ -124,7 +124,7 @@ class PostsController extends Controller
         $post = Post::where('slug', $slug);
         $post->delete();
 
-        return redirect('/blog')->with('message', 'Your post has been deleted');
+        return redirect('/invoice')->with('message', 'Your post has been deleted');
     }
 }
 

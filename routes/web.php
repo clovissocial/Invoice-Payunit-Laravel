@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController; 
+use App\Http\Controllers\PaymentController; 
+use App\Http\Controllers\PayInvoiceController; 
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +19,11 @@ use App\Http\Controllers\PostsController;
 */
 
 Route::get('/', [PagesController::class, 'index']);
+Route::post('/makePayment', [PayInvoiceController::class, 'donatePayment'])->name('total_amount');
 
-Route::resource('/blog', PostsController::class);
+
+Route::resource('/invoice', PostsController::class);
+Route::resource('/payment', PaymentController::class);
 
 Auth::routes();
 
